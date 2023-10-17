@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   def esbuild; end
 
   def webpack; end
+
+  def webpack_require; end
 end

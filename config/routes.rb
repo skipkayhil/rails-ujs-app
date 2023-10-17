@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get :importmap, to: "application#importmap"
   get :esbuild, to: "application#esbuild"
   get :webpack, to: "application#webpack"
+  get :webpack_require, to: "application#webpack_require"
 end

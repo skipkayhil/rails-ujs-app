@@ -13,7 +13,7 @@ It currently tests:
 
 ```shell
 $ bundle install
-$ yarn build:esbuild && yarn build:webpack
+$ yarn build
 $ rails s
 ```
 
@@ -29,7 +29,7 @@ In Rails UJS App:
 
 ```shell
 $ yarn link @rails/ujs
-$ yarn build:esbuild && yarn build:webpack
+$ yarn build
 ```
 
 To reverse these changes in Rails UJS App:
@@ -37,5 +37,5 @@ To reverse these changes in Rails UJS App:
 ```shell
 $ yarn unlink @rails/ujs
 $ yarn install --force
-$ yarn build:esbuild && yarn build:webpack
+$ yarn build
 ```

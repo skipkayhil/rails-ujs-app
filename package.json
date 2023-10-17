@@ -8,7 +8,9 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
+    "build": "yarn build:esbuild && yarn build:webpack && yarn build:webpack-require",
     "build:esbuild": "esbuild app/javascript/application.js --bundle --sourcemap --outfile=app/assets/builds/esbuild.js --public-path=/assets",
-    "build:webpack": "webpack --config webpack.config.js"
+    "build:webpack": "webpack --config webpack.config.js",
+    "build:webpack-require": "webpack --config webpack-require.config.js"
   }
 }
