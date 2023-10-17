@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get :sprockets, to: "application#sprockets"
   get :importmap, to: "application#importmap"
   get :esbuild, to: "application#esbuild"
   get :webpack, to: "application#webpack"
