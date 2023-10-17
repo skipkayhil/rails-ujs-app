@@ -1,24 +1,41 @@
-# README
+# Rails UJS App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app can be used to test the behavior of rails-ujs' start() across a variety
+of Rails asset libraries.
 
-Things you may want to cover:
+It currently tests:
+- sprockets (require/append)
+- importmaps
+- esbuild (jsbundling)
+- webpack (jsbundling)
 
-* Ruby version
+## Setup
 
-* System dependencies
+```shell
+$ bundle install
+$ yarn build:esbuild && yarn build:webpack
+$ rails s
+```
 
-* Configuration
+## Testing a local rails-ujs
 
-* Database creation
+In the `actionview` folder:
 
-* Database initialization
+```shell
+$ yarn link
+```
 
-* How to run the test suite
+In Rails UJS App:
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+$ yarn link @rails/ujs
+$ yarn build:esbuild && yarn build:webpack
+```
 
-* Deployment instructions
+To reverse these changes in Rails UJS App:
 
-* ...
+```shell
+$ yarn unlink @rails/ujs
+$ yarn install --force
+$ yarn build:esbuild && yarn build:webpack
+```
