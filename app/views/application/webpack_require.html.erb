@@ -1,3 +1,15 @@
 <%= javascript_include_tag "webpack-require", defer: true %>
 
 <h1>webpack require</h1>
+
+<p> Note: I'm not convinced this one is worth fixing. The change would be making
+the Rails export not the "default" export, and instead exporting each individual
+thing that the Rails object holds. There isn't a clean way to do this like
+<tt>export { ...Rails }</tt> so it would have to be <tt>export { start, fun1,
+fun2, fun3, /* 20 more functions */ }</tt> which I do not think is worth doing.
+Additionally, this makes the rails-ujs feature where these functions can be
+overriden behave unexpectedly (or not at all?), since the Rails object holding
+all of the functions would no longer be the thing passed around.</p>
+
+<p> I think asking people to migrate to the more modern <tt>import Rails from
+"@rails/ujs"</tt> instead of <tt>require("@rails/ujs")</tt> is fair </p>
