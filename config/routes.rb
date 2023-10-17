@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get :importmap, to: "application#importmap"
   get :esbuild, to: "application#esbuild"
+  get :webpack, to: "application#webpack"
 end
